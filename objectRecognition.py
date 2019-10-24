@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow as tf    #import tensorflow
 from tensorflow import keras
 import numpy as np
 import cv2
@@ -17,12 +17,12 @@ def build_model(node1,node2,optimizer,train_x,train_y):
     model.fit(train_x,train_y,epochs=5)
     return model
 
-model = build_model(128,10,'adam',train_x,train_y)
+model = build_model(128,10,'adam',train_x,train_y)    #building model using training data
 
 loss, acc = model.evaluate(test_x,test_y)
 
-predict_y = model.predict(test_x)
-
+predict_y = model.predict(test_x)           #predict values of y
+ 
 i = np.random.choice(list(range(len(test_y))))
 p_y = np.argmax(predict_y[i])
 print(labels[p_y],round(100*predict_y[i][p_y],2),labels[test_y[i]])
