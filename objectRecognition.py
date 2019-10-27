@@ -23,6 +23,7 @@ loss, acc = model.evaluate(test_x,test_y)
 
 predict_y = model.predict(test_x)           #predict values of y
  
-i = np.random.choice(list(range(len(test_y))))
+i = np.random.choice(list(range(len(test_y))))   #Testing the data
 p_y = np.argmax(predict_y[i])
 print(labels[p_y],round(100*predict_y[i][p_y],2),labels[test_y[i]])
+
