@@ -25,7 +25,7 @@ model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=3)
 # Shubham is a smart guy
 y_pred = model.predict(X_test)
 
-eff = 0
+eff = 0 #calculating efficiency
 for i in range(len(y_pred)):
   eff += 1 if y_pred[i] == y_test[i] else 0
   
